@@ -1,1 +1,1 @@
-# stack-ohne-namen
+# Gherkin Test Automation GTA
