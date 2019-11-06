@@ -1,17 +1,18 @@
 package de.qualityminds.gta.cucumber;
 
-
 import static org.junit.Assert.assertNotNull;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
 
 import cucumber.api.java.en.Then;
-import de.qualityminds.gta.Steps;
+import de.qualityminds.gta.config.SpringConfigTest;
 import de.qualityminds.gta.config.TestProperties;
 
-public class CucumberTestSteps extends Steps{
+@SpringBootTest(classes = SpringConfigTest.class)
+public class CucumberTestSteps {
 	@Autowired 
-	TestProperties properties;
+	TestProperties testProperties;
 	
 	@Then("step executes")
 	public void stepExecutes() {
@@ -20,13 +21,13 @@ public class CucumberTestSteps extends Steps{
 	
 	@Then("injection works")
 	public void injectionWorks() {
-		assertNotNull(properties);
+		assertNotNull(testProperties);
 		System.out.println("Injection works");
 	}
 	
 	@Then("test property is correctly read")
 	public void testPropertyIsCorrectlyRead() {
-		assertNotNull(properties.getTestProperty());
-		System.out.println("Test Property from config : " + properties.getTestProperty());
+		assertNotNull(testProperties.getTestProperty());
+		System.out.println("Test Property from config : " + testProperties.getTestProperty());
 	}
 }

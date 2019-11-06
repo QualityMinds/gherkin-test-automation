@@ -7,8 +7,8 @@ import org.junit.runners.model.InitializationError;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
+import config.SpringConfig;
 import de.qualityminds.gta.spring.RunnerInit;
-import de.qualityminds.gta.spring.SpringConfig;
 import net.serenitybdd.cucumber.CucumberWithSerenity;
 
 public class CucumberWithSerenityBDDStackRunner 

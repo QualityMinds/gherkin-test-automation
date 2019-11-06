@@ -1,3 +1,3 @@
-rootProject.name = "GTA"
+rootProject.name = "Gherkin-Test-Automation"
 
-include("GTA-Core")
+include("Core")

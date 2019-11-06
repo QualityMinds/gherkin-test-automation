@@ -8,23 +8,23 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import de.qualityminds.gta.config.SpringConfigTest;
 import de.qualityminds.gta.config.TestProperties;
-import de.qualityminds.gta.spring.SpringConfig;
 
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes = SpringConfig.class)	
+@SpringBootTest(classes = SpringConfigTest.class)	
 public class TestJunit {	
 	@Autowired
-	TestProperties properties;
+	TestProperties testProperties;
 	
 	@Test
 	public void testAutowired() {
-		assertNotNull(properties);
+		assertNotNull(testProperties);
 	}
 	
 	@Test
 	public void propertyRead() {
-		assertNotNull(properties.getTestProperty());
-		System.out.println("Test Property read from config : " + properties.getTestProperty());
+		assertNotNull(testProperties.getTestProperty());
+		System.out.println("Test Property read from config : " + testProperties.getTestProperty());
 	}
 }

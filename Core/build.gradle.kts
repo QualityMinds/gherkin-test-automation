@@ -27,8 +27,6 @@ dependencies {
 }
 
 tasks.named<Test>("test") {
-    // TODO: translate from Groovy to Kotlin
-    // systemProperties = System.getProperties()
     systemProperty("file.encoding", "utf-8")
 }
 
