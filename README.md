@@ -1,1 +1,3 @@
-# Gherkin Test Automation GTA
+# Gherkin Test Automation
+
+Work in progress
