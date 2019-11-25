@@ -1,3 +1,10 @@
+import com.github.jk1.license.render.ReportRenderer
+import com.github.jk1.license.render.InventoryHtmlReportRenderer
+import com.github.jk1.license.render.SimpleHtmlReportRenderer
+import com.github.jk1.license.render.CsvReportRenderer
+import com.github.jk1.license.filter.DependencyFilter
+import com.github.jk1.license.filter.LicenseBundleNormalizer
+
 val serenityVersion = "2.0.81"
 val serenityCucumberVersion = "1.0.21"
 val springBootVersion = "2.2.0.RELEASE"
@@ -5,7 +12,13 @@ val springBootVersion = "2.2.0.RELEASE"
 plugins {
     `java-library`
     `maven-publish`
+    id("com.github.jk1.dependency-license-report") version "1.11"
     // id("net.serenity-bdd.aggregator") version "2.0.81"
+}
+
+licenseReport {
+    renderers = arrayOf<ReportRenderer>(InventoryHtmlReportRenderer("report.html","Core"),SimpleHtmlReportRenderer("report-simple.html"),CsvReportRenderer("report.csv"))
+    filters = arrayOf<DependencyFilter>(LicenseBundleNormalizer())
 }
 
 dependencies {
