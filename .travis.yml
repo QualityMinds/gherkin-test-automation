@@ -5,12 +5,20 @@ matrix:
       sudo: required
       jdk: openjdk8
 
+stages:
+  - name: test
+  - name: build
+  - name: publish
+    if: branch IN (master, develop, feature/PushToSonatype)
+
 jobs:
   include:
     - stage: test
       script: ./gradlew test --info
     - stage: build
       script: ./gradlew build --info
+    - stage: publish
+      script: ./gradlew publish --info
 
 before_cache:
   - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
