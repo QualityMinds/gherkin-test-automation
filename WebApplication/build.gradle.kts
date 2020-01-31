@@ -1,43 +1,37 @@
-import com.github.jk1.license.render.ReportRenderer
-import com.github.jk1.license.render.InventoryHtmlReportRenderer
-import com.github.jk1.license.render.SimpleHtmlReportRenderer
-import com.github.jk1.license.render.CsvReportRenderer
-import com.github.jk1.license.filter.DependencyFilter
-import com.github.jk1.license.filter.LicenseBundleNormalizer
-
-val serenityVersion = "2.0.81"
-val serenityCucumberVersion = "1.0.21"
-val springBootVersion = "2.2.0.RELEASE"
+val seleniumVersion = "3.141.59"
 
 plugins {
     `java-library`
     `maven-publish`
-    id("com.github.jk1.dependency-license-report") version "1.11"
-    // id("net.serenity-bdd.aggregator") version "2.0.81"
 }
 
-licenseReport {
-    renderers = arrayOf<ReportRenderer>(InventoryHtmlReportRenderer("report.html","Core"),SimpleHtmlReportRenderer("report-simple.html"),CsvReportRenderer("report.csv"))
-    filters = arrayOf<DependencyFilter>(LicenseBundleNormalizer())
+repositories {
+    mavenCentral()
 }
 
 dependencies {
-    //Serenity  
-    api("net.serenity-bdd:serenity-core:${serenityVersion}")                  
-    api("net.serenity-bdd:serenity-junit:${serenityVersion}")
-    api("net.serenity-bdd:serenity-spring:${serenityVersion}")
-    
-    //Cucumber
-    api("net.serenity-bdd:serenity-cucumber4:${serenityCucumberVersion}")
-    
-    // Spring
-    api("org.springframework.boot:spring-boot-autoconfigure:${springBootVersion}")
-    api("org.springframework.boot:spring-boot-starter-test:${springBootVersion}")
+    api(project(":Core"))
 
-    //Utils
-    api("org.assertj:assertj-core:3.12.1")
-    api("org.slf4j:slf4j-simple:1.8.0-beta4")
-    api("org.yaml:snakeyaml:1.24")
+    //Galen
+    api("com.galenframework:galen-java-support:2.4.4")
+
+    //Selenide
+    api("com.codeborne:selenide:5.5.1")
+
+    //thewaiter
+    api("com.imalittletester:thewaiter:1.0")
+
+    //Webdrivermanager
+    api("io.github.bonigarcia:webdrivermanager:3.7.1")
+
+    //Selenium
+    api("org.seleniumhq.selenium:selenium-firefox-driver:${seleniumVersion}")
+    api("org.seleniumhq.selenium:selenium-chrome-driver:${seleniumVersion}")
+    api("org.seleniumhq.selenium:selenium-edge-driver:${seleniumVersion}")
+    api("org.seleniumhq.selenium:selenium-safari-driver:${seleniumVersion}")
+    api("org.seleniumhq.selenium:selenium-remote-driver:${seleniumVersion}")
+
+    testCompile("junit", "junit", "4.12")
 }
 
 tasks.named<Test>("test") {
@@ -71,9 +65,9 @@ publishing {
             from(components["java"])
             artifact(sourcesJar.get())
             pom {
-                name.set("GTA Core")
-                description.set("The core module of GTA")
-                url.set("https://github.com/QualityMinds/gherkin-test-automation/tree/master/Core")
+                name.set("GTA GTA WebApplication")
+                description.set("The webapplication module of GTA")
+                url.set("https://github.com/QualityMinds/gherkin-test-automation/tree/master/WebApplication")
                 licenses {
                     license {
                         name.set("The Apache License, Version 2.0")
@@ -95,12 +89,13 @@ publishing {
                 scm {
                     connection.set("scm:git:https://github.com/QualityMinds/gherkin-test-automation.git")
                     developerConnection.set("scm:git:https://github.com/QualityMinds/gherkin-test-automation.git")
-                    url.set("https://github.com/QualityMinds/gherkin-test-automation/tree/master/Core")
+                    url.set("https://github.com/QualityMinds/gherkin-test-automation/tree/master/WebApplication")
                 }
             }
 
         }
     }
 }
+
 
 gradle.startParameter.setContinueOnFailure(true)

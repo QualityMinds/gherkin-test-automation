@@ -6,6 +6,9 @@ bin
 build
 target
 
+#Ignore IDEs
 .settings
 .project
 .classpath
+.idea
+/**/*.iml
