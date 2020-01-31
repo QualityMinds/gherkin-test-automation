@@ -7,7 +7,7 @@ buildscript {
 
 allprojects {
     group = "de.qualityminds.gta"
-    version = "0.0.1-RC1"
+    version = "0.0.1-SNAPSHOT"
 
     repositories {
         jcenter()
