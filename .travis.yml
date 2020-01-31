@@ -1,9 +1,5 @@
 language: java
-matrix:
-  include:
-    - os: linux
-      sudo: required
-      jdk: openjdk8
+jdk: openjdk8
 
 stages:
   - name: test
