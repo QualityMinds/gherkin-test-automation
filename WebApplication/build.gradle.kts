@@ -52,7 +52,7 @@ publishing {
     repositories {
         maven {
             val snapshotsRepoUrl = uri("https://oss.sonatype.org/content/repositories/snapshots")
-            val releasesRepoUrl = uri("https://oss.sonatype.org/content/repositories/releases/")
+            val releasesRepoUrl = uri("https://oss.sonatype.org/service/local/staging/deploy/maven2")
             credentials(PasswordCredentials::class.java) {
                 username = rootProject.extra.get("ossrhUser")?.toString()
                 password = rootProject.extra.get("ossrhPassword")?.toString()
