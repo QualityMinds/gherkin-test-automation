@@ -1,4 +1,4 @@
-val seleniumVersion = "3.141.59"
+val seleniumVersion = "4.0.0-beta-1"
 
 plugins {
     `java-library`
@@ -16,13 +16,13 @@ dependencies {
     api("com.galenframework:galen-java-support:2.4.4")
 
     //Selenide
-    api("com.codeborne:selenide:5.5.1")
+    api("com.codeborne:selenide:5.19.0")
 
     //thewaiter
     api("com.imalittletester:thewaiter:1.0")
 
     //Webdrivermanager
-    api("io.github.bonigarcia:webdrivermanager:3.7.1")
+    api("io.github.bonigarcia:webdrivermanager:4.3.1")
 
     //Selenium
     api("org.seleniumhq.selenium:selenium-firefox-driver:${seleniumVersion}")
@@ -31,7 +31,7 @@ dependencies {
     api("org.seleniumhq.selenium:selenium-safari-driver:${seleniumVersion}")
     api("org.seleniumhq.selenium:selenium-remote-driver:${seleniumVersion}")
 
-    testCompile("junit", "junit", "4.12")
+    testCompile("junit", "junit", "4.13")
 }
 
 tasks.named<Test>("test") {
