@@ -6,13 +6,13 @@ import com.github.jk1.license.filter.DependencyFilter
 import com.github.jk1.license.filter.LicenseBundleNormalizer
 
 val serenityVersion = "2.0.81"
-val serenityCucumberVersion = "1.0.21"
-val springBootVersion = "2.2.0.RELEASE"
+val serenityCucumberVersion = "2.1.2"
+val springBootVersion = "2.4.3"
 
 plugins {
     `java-library`
     `maven-publish`
-    id("com.github.jk1.dependency-license-report") version "1.11"
+    id("com.github.jk1.dependency-license-report") version "1.16"
     // id("net.serenity-bdd.aggregator") version "2.0.81"
 }
 
@@ -35,9 +35,9 @@ dependencies {
     api("org.springframework.boot:spring-boot-starter-test:${springBootVersion}")
 
     //Utils
-    api("org.assertj:assertj-core:3.12.1")
-    api("org.slf4j:slf4j-simple:1.8.0-beta4")
-    api("org.yaml:snakeyaml:1.24")
+    api("org.assertj:assertj-core:3.19.0")
+    api("org.slf4j:slf4j-simple:2.0.0-alpha1")
+    api("org.yaml:snakeyaml:1.28")
 }
 
 tasks.named<Test>("test") {
