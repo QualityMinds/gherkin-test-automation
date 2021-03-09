@@ -48,5 +48,5 @@
 You can found a target folder under the the core module, There you can see the HTML report.
 
 
-## Can run through cmd or IntelliJ and so on **
+## Can run through cmd or IntelliJ and so on ***
 
