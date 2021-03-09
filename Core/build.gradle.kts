@@ -6,7 +6,7 @@ import com.github.jk1.license.filter.DependencyFilter
 import com.github.jk1.license.filter.LicenseBundleNormalizer
 
 val serenityVersion = "2.0.81"
-val serenityCucumberVersion = "1.0.21"
+val serenityCucumberVersion = "2.1.2"
 val springBootVersion = "2.4.3"
 
 plugins {
