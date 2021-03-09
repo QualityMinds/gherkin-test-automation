@@ -6,13 +6,13 @@ import com.github.jk1.license.filter.DependencyFilter
 import com.github.jk1.license.filter.LicenseBundleNormalizer
 
 val serenityVersion = "2.3.31"
-val serenityCucumberVersion = "1.9.51"
-val springBootVersion = "2.3.9.RELEASE"
+val serenityCucumberVersion = "2.1.2"
+val springBootVersion = "2.4.3"
 
 plugins {
     `java-library`
     `maven-publish`
-    id("com.github.jk1.dependency-license-report") version "1.11"
+    id("com.github.jk1.dependency-license-report") version "1.16"
     // id("net.serenity-bdd.aggregator") version "2.0.81"
 }
 
