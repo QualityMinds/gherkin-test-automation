@@ -1,4 +1,4 @@
-package de.qualityminds.gta;
+package de.qualityminds.gta.config;
 
 import org.springframework.context.annotation.ComponentScan;
 

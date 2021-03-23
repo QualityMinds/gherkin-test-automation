@@ -1,4 +1,4 @@
-package de.qualityminds.gta;
+package de.qualityminds.gta.runner;
 
 import org.junit.runner.RunWith;
 
