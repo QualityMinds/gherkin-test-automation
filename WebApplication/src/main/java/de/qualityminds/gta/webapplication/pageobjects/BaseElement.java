@@ -6,9 +6,9 @@ import org.openqa.selenium.WebElement;
 import org.springframework.lang.Nullable;
 
 public abstract class BaseElement {
-    WebDriver driver;
-    WebElement parent;
-    WebElement element;
+    protected WebDriver driver;
+    protected WebElement parent;
+    protected WebElement element;
 
     protected BaseElement(WebDriver driver, By by, @Nullable WebElement parentElement) {
         this.driver = driver;
