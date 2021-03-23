@@ -1,4 +1,4 @@
-package de.qualityminds.gta.webapplication;
+package de.qualityminds.gta.webapplication.pageobjects;
 
 import com.codeborne.selenide.WebDriverRunner;
 import com.galenframework.browser.SeleniumBrowser;

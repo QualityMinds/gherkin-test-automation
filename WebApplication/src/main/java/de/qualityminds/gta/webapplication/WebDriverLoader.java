@@ -1,6 +1,6 @@
 package de.qualityminds.gta.webapplication;
 
-import de.qualityminds.gta.spring.RunnerInit;
+import de.qualityminds.gta.runner.RunnerInit;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;

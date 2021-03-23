@@ -3,7 +3,7 @@ package de.qualityminds.gta.steps;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ContextConfiguration;
 
-import de.qualityminds.gta.SpringConfig;
+import de.qualityminds.gta.config.SpringConfig;
 
 @SpringBootTest(classes = SpringConfig.class)
 @ContextConfiguration(classes = {SpringConfig.class})

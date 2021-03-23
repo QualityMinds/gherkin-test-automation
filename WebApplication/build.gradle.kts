@@ -1,4 +1,4 @@
-val seleniumVersion = "4.0.0-beta-1"
+val seleniumVersion = "3.141.59"
 
 plugins {
     `java-library`

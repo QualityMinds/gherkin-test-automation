@@ -1,13 +1,13 @@
-package de.qualityminds.gta;
+package de.qualityminds.gta.runner;
 
 import java.io.IOException;
 import java.util.Map;
 
+import de.qualityminds.gta.config.SpringConfig;
 import org.junit.runners.model.InitializationError;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-import de.qualityminds.gta.spring.RunnerInit;
 import net.serenitybdd.cucumber.CucumberWithSerenity;
 
 public class CucumberWithSerenityBDDStackRunner 
