@@ -5,8 +5,9 @@
 # ===================================================================
 spring:
    main:
-      web-environment: false
       banner-mode: "off"
+      log-startup-info: off
+      web-application-type: none
 
 test:
    testProperty: "Hello Test"

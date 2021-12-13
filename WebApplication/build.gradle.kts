@@ -30,8 +30,6 @@ dependencies {
     api("org.seleniumhq.selenium:selenium-edge-driver:${seleniumVersion}")
     api("org.seleniumhq.selenium:selenium-safari-driver:${seleniumVersion}")
     api("org.seleniumhq.selenium:selenium-remote-driver:${seleniumVersion}")
-
-    testCompile("junit", "junit", "4.13")
 }
 
 tasks.named<Test>("test") {

@@ -15,7 +15,6 @@ import org.openqa.selenium.WebDriver;
 
 import java.io.IOError;
 import java.io.IOException;
-import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Properties;
@@ -26,7 +25,7 @@ public class Page extends net.serenitybdd.core.pages.PageObject {
 		super(driver);
 		WebDriverRunner.setWebDriver(driver);
 	}
-	
+
 	@Override
 	public void shouldBeDisplayed() {
 		List<ValidationResult> validationList = validatePage(true);
@@ -36,27 +35,27 @@ public class Page extends net.serenitybdd.core.pages.PageObject {
 
 		super.shouldBeDisplayed();
 	}
-	
+
 	private List<ValidationResult> validatePage(boolean fast){
 		Spec specAnnotation = this.getClass().getAnnotation(Spec.class);
 		if(specAnnotation==null) {
 			return new LinkedList<>();
 		}
-		
+
 		try {
 			return galenCheck((fast && !specAnnotation.fast().isEmpty()) ? specAnnotation.fast() : specAnnotation.value());
 		} catch (IOException e) {
 			throw new IOError(e);
 		}
 	}
-	
+
 	private List<ValidationResult> galenCheck(String specPath) throws IOException {
 		SectionFilter sectionFilter = new SectionFilter(new LinkedList<>(), new LinkedList<>());
 		Properties properties = new Properties();
-				
+
 		SeleniumBrowser browser = new SeleniumBrowser(getDriver());
         PageSpecReader reader = new PageSpecReader();
-        
+
         PageSpec pageSpec = reader.read(specPath, browser.getPage(), sectionFilter, properties, null, null);
 
         CombinedValidationListener listener = new CombinedValidationListener();

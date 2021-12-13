@@ -1,12 +1,13 @@
 package de.qualityminds.gta.runner;
 
+import io.cucumber.junit.CucumberOptions;
+
 import org.junit.runner.RunWith;
 
-import cucumber.api.CucumberOptions;
 
 @RunWith(CucumberWithSerenityBDDStackRunner.class)
 @CucumberOptions(features = "src/test/resources/features/")
-public abstract class AbstractCucumberAcceptenceRunner {
-	public AbstractCucumberAcceptenceRunner() {		
+public abstract class AbstractCucumberAcceptanceRunner {
+	protected AbstractCucumberAcceptanceRunner() {
 	}
 }

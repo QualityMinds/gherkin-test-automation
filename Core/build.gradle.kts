@@ -5,39 +5,41 @@ import com.github.jk1.license.render.CsvReportRenderer
 import com.github.jk1.license.filter.DependencyFilter
 import com.github.jk1.license.filter.LicenseBundleNormalizer
 
-val serenityVersion = "2.0.81"
-val serenityCucumberVersion = "2.1.2"
-val springBootVersion = "2.4.3"
+val serenityVersion = "3.1.10"
+val springBootVersion = "2.6.1"
 
 plugins {
     `java-library`
     `maven-publish`
-    id("com.github.jk1.dependency-license-report") version "1.16"
-    // id("net.serenity-bdd.aggregator") version "2.0.81"
+    id("com.github.jk1.dependency-license-report") version "1.17"
+    id("io.freefair.lombok") version "4.1.6"
 }
 
 licenseReport {
-    renderers = arrayOf<ReportRenderer>(InventoryHtmlReportRenderer("report.html","Core"),SimpleHtmlReportRenderer("report-simple.html"),CsvReportRenderer("report.csv"))
+    renderers = arrayOf<ReportRenderer>(
+        InventoryHtmlReportRenderer("report.html", "Core"),
+        SimpleHtmlReportRenderer("report-simple.html"),
+        CsvReportRenderer("report.csv")
+    )
     filters = arrayOf<DependencyFilter>(LicenseBundleNormalizer())
 }
 
 dependencies {
-    //Serenity  
-    api("net.serenity-bdd:serenity-core:${serenityVersion}")                  
+    //Serenity + Cucumber
+    api("net.serenity-bdd:serenity-core:${serenityVersion}")
     api("net.serenity-bdd:serenity-junit:${serenityVersion}")
     api("net.serenity-bdd:serenity-spring:${serenityVersion}")
-    
-    //Cucumber
-    api("net.serenity-bdd:serenity-cucumber4:${serenityCucumberVersion}")
-    
+    api("net.serenity-bdd:serenity-cucumber:${serenityVersion}")
+
     // Spring
     api("org.springframework.boot:spring-boot-autoconfigure:${springBootVersion}")
     api("org.springframework.boot:spring-boot-starter-test:${springBootVersion}")
+    annotationProcessor("org.springframework.boot:spring-boot-configuration-processor:${springBootVersion}")
 
     //Utils
-    api("org.assertj:assertj-core:3.19.0")
-    api("org.slf4j:slf4j-simple:2.0.0-alpha1")
-    api("org.yaml:snakeyaml:1.28")
+    api("org.assertj:assertj-core:3.21.0")
+    api("org.slf4j:slf4j-simple:2.0.0-alpha5")
+    api("org.yaml:snakeyaml:1.29")
 }
 
 tasks.named<Test>("test") {
