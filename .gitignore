@@ -12,3 +12,6 @@ target
 .classpath
 .idea
 /**/*.iml
+
+# Ignore lombok
+/**/lombok.config
