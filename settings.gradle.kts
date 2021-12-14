@@ -5,4 +5,5 @@ include("Utils")
 
 include("DB2")
 include("FTP")
+include("MQ")
 include("WebApplication")

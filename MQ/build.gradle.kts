@@ -12,6 +12,7 @@ dependencies {
     api(project(":Core"))
 
     implementation("commons-net:commons-net:3.8.0")
+    implementation("com.ibm.mq:com.ibm.mq.allclient:9.2.4.0")
 }
 
 tasks.named<Test>("test") {
@@ -45,11 +46,11 @@ publishing {
             from(components["java"])
             artifact(sourcesJar.get())
             pom {
-                name.set("GTA FTP")
+                name.set("GTA MQ")
                 description.set(
-                    "The FTP module of GTA."
+                    "The MQ module of GTA."
                 )
-                url.set("https://github.com/QualityMinds/gherkin-test-automation/tree/master/FTP")
+                url.set("https://github.com/QualityMinds/gherkin-test-automation/tree/master/MQ")
                 licenses {
                     license {
                         name.set("The Apache License, Version 2.0")
@@ -71,7 +72,7 @@ publishing {
                 scm {
                     connection.set("scm:git:https://github.com/QualityMinds/gherkin-test-automation.git")
                     developerConnection.set("scm:git:https://github.com/QualityMinds/gherkin-test-automation.git")
-                    url.set("https://github.com/QualityMinds/gherkin-test-automation/tree/master/FTP")
+                    url.set("https://github.com/QualityMinds/gherkin-test-automation/tree/master/MQ")
                 }
             }
 
